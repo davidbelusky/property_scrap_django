@@ -1,22 +1,28 @@
-# Real estate scrap API
+# Property scrap API
 
 ## Requirements:
 - Python3
-
 ## Startup:
-- Install python packages `pip3 install requirements.txt`
-- Run django API server `python3 manage.py runserver`
+- Create python3 venv `python3 -m venv "venv"`
+- Activate venv `source venv/bin/activate`
+- Install python packages `pip3 install -r requirements.txt`
+- Run django API server `python3 manage.py migrate && python3 manage.py runserver`
 
 
 ## Info:
 App can scrap clean and store into DB properties data from `www.slnecnice.sk` and `www.yit.sk` 
+
+**Stack**:
+- Backend: python3
+- API library: django rest
+- DB: sqllite3
 
 Server is running on `http://localhost:8000/`
 
 ## Endpoints:
 
 ### `/update-properties/`
-**POST** `/update-properties/` - Download properties data filter and clean them, then store cleaned data into DB
+**POST** `/update-properties/` - Download properties data, filter and clean them, then store cleaned data into DB
 
 ### `/properties/`
 **GET** `/properties/` - Show all properties in DB, for this endpoint can be used filters below
